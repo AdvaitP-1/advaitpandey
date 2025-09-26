@@ -168,4 +168,4 @@ const Card = ({ title, subtitle, className, href }) => {
       </motion.div>
     </MotionConfig>
   )
-}
+};
