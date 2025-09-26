@@ -168,10 +168,7 @@ const LINKS = [
     title: "Projects",
     href: "projects",
   },
-  {
-    title: "Batcave",
-    href: "batcave",
-  },
+
 ];
 
 const SOCIAL_CTAS = [

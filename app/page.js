@@ -67,28 +67,6 @@ export default function Home() {
             {/* 👇 Resume Button */}
             <NeuFollowButton />
 
-            {/* 👇 Social Buttons */}
-            <div className="flex gap-4">
-              <a
-                href="https://github.com/AdvaitP-1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 rounded-md border-2 border-white bg-black px-4 py-2 font-semibold text-white transition hover:bg-white hover:text-black"
-              >
-                <Github className="h-5 w-5" />
-                GitHub
-              </a>
-
-              <a
-                href="https://www.linkedin.com/in/advp/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 rounded-md border-2 border-white bg-black px-4 py-2 font-semibold text-white transition hover:bg-white hover:text-black"
-              >
-                <Linkedin className="h-5 w-5" />
-                LinkedIn
-              </a>
-            </div>
 
             <div className="flex items-center gap-2 pt-2 text-xs text-white/60 md:text-sm">
               <span>learn more from the hamburger</span>

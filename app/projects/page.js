@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 import { MotionConfig, motion } from "framer-motion";
 import { ArrowRight, Section } from "lucide-react";
 import Nav from "../components/navbar";
-import Silk from "../components/projectbackground";
+import Silk from "../components/background";
 
 export default function projects() {
   return (

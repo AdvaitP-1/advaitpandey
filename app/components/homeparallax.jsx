@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
+import Silk from "./background";
 
 export function HomeHero() {
   const targetRef = useRef(null);
@@ -60,14 +61,29 @@ const Copy = ({ opacity }) => {
   return (
     <motion.div
       style={{ opacity }}
-      className="relative flex h-4/5 flex-col items-center justify-center gap-6 overflow-hidden bg-white p-4 pt-[calc(56px_+_16px)] text-black"
+      className="relative flex h-4/5 flex-col items-center justify-center gap-6 overflow-hidden p-4 pt-[calc(56px_+_16px)]"
     >
-      <h1 className="text-center text-[120px] md:text-[150px] font-black leading-none">
-        Advait Pandey
-      </h1>
-      <p className="text-center text-[40px] md:text-[56px] font-semibold">
-        Software Engineer
-      </p>
+      <div className="fixed inset-0 z-0">
+        <Silk
+          speed={5}
+          scale={1.2}
+          color="#7B7481"
+          noiseIntensity={3.8}
+          rotation={0}
+        />
+      </div>
+      <div className="relative z-10">
+        <h1 className="text-center text-[120px] md:text-[150px] font-black leading-none">
+          <span className="bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
+            Advait Pandey
+          </span>
+        </h1>
+        <p className="text-center text-[40px] md:text-[56px] font-semibold">
+          <span className="bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
+            Software Engineer
+          </span>
+        </p>
+      </div>
     </motion.div>
   );
 };
