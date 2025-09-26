@@ -1,157 +1,91 @@
-"use client"
+'use client';
 
-import { useRef } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { useRef } from "react";
+import { useScroll, useTransform, motion } from "framer-motion";
 
-export function Homehero() {
+export function HomeHero() {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: targetRef });
+
+  const scale = useTransform(scrollYProgress, [0, 0.65, 0.8, 1], [1, 1, 0.9, 1.25]);
+  const rotate = useTransform(scrollYProgress, [0, 0.25, 1], ["0deg", "0deg", "60deg"]);
+  const top = useTransform(scrollYProgress, [0, 0.25], ["80%", "0%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.125], [1, 0]);
+  const logoScale = useTransform(scrollYProgress, [0, 0.8, 1], [0, 0, 1]);
+
   return (
-    <div className="bg-white">
-      <TextParallaxContent subheading="Software Engineer" heading="Advait Pandey" isHero={true}>
-        <HeroContent />
-      </TextParallaxContent>
-      <TextParallaxContent imgUrl="/aboutbg.jpg" subheading="About" heading="Get to know me">
-        <AboutContent />
-      </TextParallaxContent>
-    </div>
-  )
-}
-
-const IMG_PADDING = 12
-
-const TextParallaxContent = ({ imgUrl, subheading, heading, children, isHero = false }) => {
-  return (
-    <div
-      style={{
-        paddingLeft: IMG_PADDING,
-        paddingRight: IMG_PADDING,
-      }}
-    >
-      <div className="relative h-[150vh]">
-        <StickyImage imgUrl={imgUrl} isHero={isHero} />
-        <OverlayCopy heading={heading} subheading={subheading} isHero={isHero} />
+    <div ref={targetRef} className="relative z-0 h-[800vh] bg-neutral-200">
+      <div className="sticky top-0 h-screen bg-white">
+        <Copy opacity={opacity} />
+        <Trippy rotate={rotate} top={top} scale={scale} />
+        <OverlayLogo scale={logoScale} />
       </div>
-      {children}
     </div>
-  )
+  );
 }
 
-const StickyImage = ({ imgUrl, isHero }) => {
-  const targetRef = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ["end end", "end start"],
-  })
+const NUM_SECTIONS = 25;
+const PADDING = `${100 / NUM_SECTIONS / 2}vmin`;
 
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85])
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0])
+const generateSections = (count, color, scale, rotate) => {
+  if (count === NUM_SECTIONS) return <></>;
+  const nextColor = color === "black" ? "white" : "black";
+  return (
+    <Section rotate={rotate} scale={scale} background={color}>
+      {generateSections(count + 1, nextColor, scale, rotate)}
+    </Section>
+  );
+};
 
-  if (isHero) {
-    return (
-      <motion.div
-        style={{
-          height: `calc(100vh - ${IMG_PADDING * 2}px)`,
-          top: IMG_PADDING,
-          scale,
-        }}
-        ref={targetRef}
-        className="sticky z-0 overflow-hidden rounded-3xl bg-white"
-      >
-        <motion.div
-          className="absolute inset-0 bg-white"
-          style={{
-            opacity,
-          }}
-        />
-      </motion.div>
-    )
-  }
+const Trippy = ({ rotate, scale, top }) => {
+  return (
+    <motion.div style={{ top }} className="absolute bottom-0 left-0 right-0 overflow-hidden bg-black">
+      {generateSections(0, "black", scale, rotate)}
+    </motion.div>
+  );
+};
 
+const Section = ({ background, scale, children, rotate }) => {
   return (
     <motion.div
-      style={{
-        backgroundImage: `url(${imgUrl})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        height: `calc(100vh - ${IMG_PADDING * 2}px)`,
-        top: IMG_PADDING,
-        scale,
-      }}
-      ref={targetRef}
-      className="sticky z-0 overflow-hidden rounded-3xl"
+      className="relative h-full w-full origin-center"
+      style={{ background, scale, rotate, padding: PADDING }}
     >
-      <motion.div
-        className="absolute inset-0 bg-neutral-950/70"
-        style={{
-          opacity,
-        }}
+      {children}
+    </motion.div>
+  );
+};
+
+const Copy = ({ opacity }) => {
+  return (
+    <motion.div
+      style={{ opacity }}
+      className="relative flex h-4/5 flex-col items-center justify-center gap-6 overflow-hidden bg-white p-4 pt-[calc(56px_+_16px)] text-black"
+    >
+      <h1 className="text-center text-[120px] md:text-[150px] font-black leading-none">
+        Advait Pandey
+      </h1>
+      <p className="text-center text-[40px] md:text-[56px] font-semibold">
+        Software Engineer
+      </p>
+    </motion.div>
+  );
+};
+
+
+
+const OverlayLogo = ({ scale }) => {
+  return (
+    <motion.div
+      style={{ scale }}
+      className="pointer-events-none absolute inset-0 z-[5] grid place-content-center"
+    >
+      <img
+        src="/logo2.jpg"
+        alt="Logo"
+        className="h-45 w-auto"
       />
     </motion.div>
-  )
-}
+  );
+};
 
-const OverlayCopy = ({ subheading, heading, isHero }) => {
-  const targetRef = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ["start end", "end start"],
-  })
-
-  const y = useTransform(scrollYProgress, [0, 1], [250, -250])
-  const opacity = useTransform(scrollYProgress, [0.25, 0.5, 0.75], [0, 1, 0])
-
-  return (
-    <motion.div
-      style={{
-        y,
-        opacity,
-      }}
-      ref={targetRef}
-      className={`absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center ${
-        isHero ? "text-black" : "text-white"
-      }`}
-    >
-      <p className="mb-2 text-center text-xl md:mb-4 md:text-3xl font-medium">{subheading}</p>
-      <p className="text-center text-6xl font-bold md:text-8xl text-balance">{heading}</p>
-    </motion.div>
-  )
-}
-
-const HeroContent = () => (
-  <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12 bg-gradient-to-b from-gray-50 to-white">
-    <div className="col-span-1 md:col-span-12 text-center"></div>
-  </div>
-)
-
-const AboutContent = () => (
-  <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
-    <div className="col-span-1 md:col-span-4 flex justify-center md:justify-start">
-      <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white shadow-2xl">
-        <img src="/profile.jpg" alt="Advait Pandey" className="w-full h-full object-cover" />
-      </div>
-    </div>
-    <div className="col-span-1 md:col-span-8">
-      <p className="mb-6 text-xl text-gray-600 md:text-2xl leading-relaxed">
-        I'm a computer engineer at NC State 
-      </p>
-      <p className="mb-6 text-xl text-gray-600 md:text-2xl leading-relaxed">
-        When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing
-        knowledge with the developer community.
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <div className="text-center p-6 bg-white rounded-lg shadow-sm border">
-          <h3 className="font-bold text-2xl text-gray-900 mb-2">Frontend</h3>
-          <p className="text-gray-600">React, Angular, TypeScript</p>
-        </div>
-        <div className="text-center p-6 bg-white rounded-lg shadow-sm border">
-          <h3 className="font-bold text-2xl text-gray-900 mb-2">Backend</h3>
-          <p className="text-gray-600">Java, Go, C#, Node.js, Python, SQl, PostgreSQL</p>
-        </div>
-        <div className="text-center p-6 bg-white rounded-lg shadow-sm border">
-          <h3 className="font-bold text-2xl text-gray-900 mb-2">Tools</h3>
-          <p className="text-gray-600">Git, Docker, AWS, </p>
-        </div>
-      </div>
-      <p className="text-center text-lg text-gray-600 font-medium">Check the hamburger for more</p>
-    </div>
-  </div>
-)

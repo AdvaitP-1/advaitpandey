@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight,ArrowUpRight, Linkedin, Github } from "lucide-react";
-
+import Link from "next/link";
 
 
 export default function Nav(){
@@ -92,7 +92,7 @@ function HamburgerButton({ active, setActive }) {
         animate={active ? "open" : "closed"}
         variants={UNDERLAY_VARIANTS}
         style={{ top: 16, right: 16 }}
-        className="fixed z-10 rounded-xl bg-gradient-to-br bg-black shadow-lg shadow-blue-500"
+        className="fixed z-10 rounded-xl bg-gradient-to-br bg-black"
       />
 
       <motion.button
@@ -150,30 +150,15 @@ function FooterCTAs() {
         })}
       </div>
 
-      <motion.button
-        initial={{ opacity: 0, y: 8 }}
-        animate={{
-          opacity: 1,
-          y: 0,
-          transition: {
-            delay: 1.125,
-            duration: 0.5,
-            ease: "easeInOut",
-          },
-        }}
-        exit={{ opacity: 0, y: 8 }}
-        className="absolute bottom-2 right-2 flex items-center gap-2 rounded-full bg-blue-500 px-3 py-3 text-4xl uppercase text-white transition-colors hover:bg-black hover:text-white md:bottom-4 md:right-4 md:px-6 md:text-2xl"
-      >
-        <span className="hidden md:block">contact me</span> <ArrowRight />
-      </motion.button>
+
     </>
   );
-};
+}
 
 const LINKS = [
   {
     title: "Home",
-    href: "",
+    href: "/",
   },
   {
     title: "Experience",
