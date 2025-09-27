@@ -22,21 +22,21 @@ export default function projects() {
         </div>
       
         <div className="relative z-10">
-          <section className="relative text-center text-white py-12 px-4">
+          <section className="relative text-center text-white py-8 px-4 sm:py-12">
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-96 h-96 border border-white/10 rounded-full"></div>
-                <div className="absolute w-64 h-64 border border-white/5 rounded-full"></div>
+                <div className="w-64 h-64 border border-white/10 rounded-full sm:w-96 sm:h-96"></div>
+                <div className="absolute w-48 h-48 border border-white/5 rounded-full sm:w-64 sm:h-64"></div>
               </div>
               
               <div className="relative z-10">
-                <h1 className="text-[120px] md:text-[160px] font-black uppercase tracking-tighter leading-none mb-8">
+                <h1 className="text-[60px] sm:text-[80px] md:text-[120px] lg:text-[160px] font-black uppercase tracking-tighter leading-none mb-6 sm:mb-8">
                   <span className="bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
                     Projects
                   </span>
                 </h1>
                 
                 <div className="max-w-4xl mx-auto">
-                  <p className="text-xl md:text-2xl font-light leading-relaxed text-white/90 mb-6">
+                  <p className="text-lg sm:text-xl md:text-2xl font-light leading-relaxed text-white/90 mb-4 sm:mb-6">
                     A curated collection of my most impactful software engineering projects
                   </p>
                   <div className="flex items-center justify-center gap-4 text-sm font-mono text-white/60 mb-8">
@@ -62,8 +62,8 @@ export default function projects() {
                 </div>
               </div>
           </section>
-        <section className="m-auto py-10">
-            <div className="mx-auto grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-2">
+        <section className="m-auto py-8 px-4 sm:py-10">
+            <div className="mx-auto grid max-w-3xl grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2">
                 <Card
                     title="Obelisk DB"
                     subtitle="A custom database management system with file handling, ACID transactions, and sql-like usage"
@@ -96,12 +96,12 @@ export default function projects() {
 };
 
 const Card = ({ title, subtitle, className, href }) => {
-  return (
+  const CardContent = () => (
     <MotionConfig transition={{ type: "spring", bounce: 0.5 }}>
       <motion.div
         whileHover="hovered"
         className={twMerge(
-          "group w-full border-[2px] border-black bg-emerald-300 text-black",
+          "group w-full border-[2px] border-black bg-emerald-300 text-black cursor-pointer",
           className
         )}
       >
@@ -114,17 +114,17 @@ const Card = ({ title, subtitle, className, href }) => {
             initial={{ x: 0, y: 0 }}
             variants={{ hovered: { x: -8, y: -8 } }}
             className={twMerge(
-              "relative !-m-[2px] flex h-72 flex-col justify-between overflow-hidden border-[2px] border-black bg-emerald-300 p-8",
+              "relative !-m-[2px] flex h-64 flex-col justify-between overflow-hidden border-[2px] border-black bg-emerald-300 p-4 sm:h-72 sm:p-8",
               className
             )}
           >
-            <p className="flex items-center text-2xl font-medium uppercase">
-              <ArrowRight className="-ml-8 mr-2 opacity-0 transition-all duration-300 ease-in-out group-hover:ml-0 group-hover:opacity-100" />
+            <p className="flex items-center text-lg font-medium uppercase sm:text-2xl">
+              <ArrowRight className="-ml-4 mr-2 opacity-100 transition-all duration-300 ease-in-out group-hover:ml-0 sm:opacity-0 sm:group-hover:opacity-100 sm:-ml-8" />
               {title}
             </p>
 
             <div>
-              <p className="transition-[margin] duration-300 ease-in-out group-hover:mb-10">
+              <p className="mb-4 transition-[margin] duration-300 ease-in-out group-hover:mb-10 sm:mb-0">
                 {subtitle}
               </p>
 
@@ -133,7 +133,7 @@ const Card = ({ title, subtitle, className, href }) => {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute bottom-2 left-2 right-2 translate-y-[120%] border-[2px] border-black bg-white px-4 py-2 text-center text-black opacity-0 transition-all duration-300 ease-in-out group-hover:translate-y-0 group-hover:opacity-100"
+                  className="block sm:absolute sm:bottom-2 sm:left-2 sm:right-2 sm:translate-y-[120%] border-[2px] border-black bg-white px-4 py-2 text-center text-black transition-all duration-300 ease-in-out sm:opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100"
                 >
                   LET&apos;S GO
                 </a>
@@ -167,5 +167,20 @@ const Card = ({ title, subtitle, className, href }) => {
         </motion.div>
       </motion.div>
     </MotionConfig>
-  )
+  );
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block sm:contents"
+      >
+        <CardContent />
+      </a>
+    );
+  }
+
+  return <CardContent />;
 };

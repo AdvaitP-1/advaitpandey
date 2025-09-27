@@ -18,21 +18,21 @@ export default function Experience(){
           />
         </div>
         <div className="relative z-10">
-          <section className="relative text-center text-white py-12 px-4">
+          <section className="relative text-center text-white py-8 px-4 sm:py-12">
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-96 h-96 border border-white/10 rounded-full"></div>
-                <div className="absolute w-64 h-64 border border-white/5 rounded-full"></div>
+                <div className="w-64 h-64 border border-white/10 rounded-full sm:w-96 sm:h-96"></div>
+                <div className="absolute w-48 h-48 border border-white/5 rounded-full sm:w-64 sm:h-64"></div>
               </div>
               
               <div className="relative z-10">
-                <h1 className="text-[120px] md:text-[160px] font-black uppercase tracking-tighter leading-none mb-8">
+                <h1 className="text-[60px] sm:text-[80px] md:text-[120px] lg:text-[160px] font-black uppercase tracking-tighter leading-none mb-6 sm:mb-8">
                   <span className="bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
                     Experience
                   </span>
                 </h1>
                 
                 <div className="max-w-4xl mx-auto">
-                  <p className="text-xl md:text-2xl font-light leading-relaxed text-white/90 mb-6">
+                  <p className="text-lg sm:text-xl md:text-2xl font-light leading-relaxed text-white/90 mb-4 sm:mb-6">
                     My professional journey in software engineering and technology
                   </p>
                   
@@ -53,12 +53,12 @@ export default function Experience(){
               </div>
           </section>
 
-          <section className="relative py-20 px-4">
+          <section className="relative py-12 px-4 sm:py-20">
             <div className="max-w-6xl mx-auto">
               <div className="relative">
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-white/20"></div>
+                <div className="absolute left-4 sm:left-1/2 transform sm:-translate-x-1/2 w-1 h-full bg-white/20"></div>
                 
-                <div className="space-y-16">
+                <div className="space-y-8 sm:space-y-16">
                   <ExperienceCard
                     side="left"
                     company="Spectrum"
@@ -118,18 +118,18 @@ export default function Experience(){
 
 const ExperienceCard = ({ side, company, position, location, duration, achievements }) => {
   return (
-    <div className={`relative flex ${side === 'left' ? 'justify-start' : 'justify-end'}`}>
-      <div className={`w-5/12 ${side === 'left' ? 'pr-8' : 'pl-8'}`}>
-        <div className="bg-white/3 backdrop-blur-sm border border-white/5 rounded-2xl p-6 hover:bg-white/6 transition-all duration-300">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-xl font-bold text-white">{company}</h3>
-            <span className="text-sm font-mono text-white/60">{duration}</span>
+    <div className={`relative flex ${side === 'left' ? 'justify-start' : 'justify-end'} sm:${side === 'left' ? 'justify-start' : 'justify-end'}`}>
+      <div className={`w-full sm:w-5/12 ${side === 'left' ? 'sm:pr-8' : 'sm:pl-8'} ${side === 'left' ? 'ml-8 sm:ml-0' : 'mr-8 sm:mr-0'}`}>
+        <div className="bg-white/3 backdrop-blur-sm border border-white/5 rounded-2xl p-4 sm:p-6 hover:bg-white/6 transition-all duration-300">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 sm:mb-4">
+            <h3 className="text-lg sm:text-xl font-bold text-white">{company}</h3>
+            <span className="text-xs sm:text-sm font-mono text-white/60">{duration}</span>
           </div>
-          <h4 className="text-lg font-semibold text-white/90 mb-2">{position}</h4>
-          <p className="text-sm font-mono text-white/70 mb-4">{location}</p>
-          <ul className="space-y-2">
+          <h4 className="text-base sm:text-lg font-semibold text-white/90 mb-2">{position}</h4>
+          <p className="text-xs sm:text-sm font-mono text-white/70 mb-3 sm:mb-4">{location}</p>
+          <ul className="space-y-1 sm:space-y-2">
             {achievements.map((achievement, index) => (
-              <li key={index} className="text-sm text-white/80 leading-relaxed">
+              <li key={index} className="text-xs sm:text-sm text-white/80 leading-relaxed">
                 • {achievement}
               </li>
             ))}
@@ -137,7 +137,7 @@ const ExperienceCard = ({ side, company, position, location, duration, achieveme
         </div>
       </div>
       
-      <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white rounded-full border-4 border-white/20"></div>
+      <div className="absolute left-4 sm:left-1/2 transform sm:-translate-x-1/2 w-3 h-3 sm:w-4 sm:h-4 bg-white rounded-full border-2 sm:border-4 border-white/20"></div>
     </div>
   );
 };

@@ -18,7 +18,7 @@ export default function Nav(){
 
 function LinksOverlay() {
   return (
-    <nav className="fixed right-4 top-4 z-40 h-[calc(100vh_-_32px)] w-[calc(100%_-_32px)] overflow-hidden">
+    <nav className="fixed right-2 top-2 z-40 h-[calc(100vh_-_16px)] w-[calc(100%_-_16px)] overflow-hidden sm:right-4 sm:top-4 sm:h-[calc(100vh_-_32px)] sm:w-[calc(100%_-_32px)]">
       <Logo />
       <LinksContainer />
       <FooterCTAs />
@@ -91,15 +91,15 @@ function HamburgerButton({ active, setActive }) {
         initial={false}
         animate={active ? "open" : "closed"}
         variants={UNDERLAY_VARIANTS}
-        style={{ top: 16, right: 16 }}
-        className="fixed z-10 rounded-xl bg-gradient-to-br bg-black"
+        style={{ top: 8, right: 8 }}
+        className="fixed z-10 rounded-xl bg-gradient-to-br bg-black sm:top-4 sm:right-4"
       />
 
       <motion.button
         initial={false}
         animate={active ? "open" : "closed"}
         onClick={() => setActive((pv) => !pv)}
-        className={`group fixed right-4 top-4 z-50 h-20 w-20 bg-white/0 transition-all hover:bg-white/20 ${
+        className={`group fixed right-2 top-2 z-50 h-16 w-16 bg-white/0 transition-all hover:bg-white/20 sm:right-4 sm:top-4 sm:h-20 sm:w-20 ${
           active ? "rounded-bl-xl rounded-tr-xl" : "rounded-xl"
         }`}
       >
