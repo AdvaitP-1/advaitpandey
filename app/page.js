@@ -35,28 +35,28 @@ export default function Home() {
         ref={restRef}
         className="bg-black text-white"
       >
-        <div className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-8 px-4 py-16 sm:gap-12 sm:px-6 sm:py-24 md:grid-cols-[240px,1fr]">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-12 px-6 py-24 md:grid-cols-[240px,1fr]">
           <div className="flex justify-center md:justify-start">
             <img
-              src="/profile.JPG"  
+              src="/profile.jpg"  
               alt="Advait Pandey profile photo"
-              className="h-40 w-40 rounded-full object-cover ring-2 ring-white/20 shadow-xl sm:h-48 sm:w-48 md:h-60 md:w-60"
+              className="h-48 w-48 rounded-full object-cover ring-2 ring-white/20 shadow-xl md:h-60 md:w-60"
             />
           </div>
 
-          <div className="space-y-4 sm:space-y-5">
-            <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
+          <div className="space-y-5">
+            <h2 className="text-4xl font-extrabold tracking-tight md:text-5xl">
               About me
             </h2>
 
-            <p className="max-w-prose text-lg leading-relaxed text-white/90 sm:text-xl md:text-2xl">
-              I'm a Computer Engineering student at NC State who's been coding since middle school.
+            <p className="max-w-prose text-xl leading-relaxed text-white/90 md:text-2xl">
+              I’m a Computer Engineering student at NC State who’s been coding since middle school.
               I love building real products end-to-end—from clean, reactive frontends to efficient,
               reliable backends and distributed systems. In my free time I read and watch comics and
-              I like to draw; I'm big on design, craft, and shipping things people actually use.
+              I like to draw; I’m big on design, craft, and shipping things people actually use.
             </p>
 
-            <p className="max-w-prose text-base leading-relaxed text-white/80 sm:text-lg md:text-xl">
+            <p className="max-w-prose text-lg leading-relaxed text-white/80 md:text-xl">
               Comfortable with <span className="font-semibold text-white">Java, JavaScript, and C#</span> for backend;
               <span className="font-semibold text-white"> React and TypeScript</span> for frontend; and
               <span className="font-semibold text-white"> SQL</span> for databases.
@@ -64,7 +64,7 @@ export default function Home() {
               <span className="font-semibold text-white"> infrastructure development</span>.
             </p>
 
-            {/* 👇 Resume Button */}
+  
             <NeuFollowButton />
 
 

@@ -16,7 +16,11 @@ export const metadata = {
   title: "Advait Pandey",
   description: "Software Engineer Portfolio - Advait Pandey",
   icons: { icon: "/icon.png" },
-  viewport: "width=device-width, initial-scale=1",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }) {
