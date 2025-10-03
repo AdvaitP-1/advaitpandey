@@ -4,8 +4,8 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Nav from "./components/navbar";
 import { HomeHero } from "./components/homeparallax";
-import NeuFollowButton from "./components/button"; // 👈 your resume button
-import { Github, Linkedin } from "lucide-react"; // 👈 new icons
+import NeuFollowButton from "./components/button"; 
+import { Github, Linkedin } from "lucide-react"; 
 
 export default function Home() {
   const heroRef = useRef(null);
@@ -51,14 +51,16 @@ export default function Home() {
 
             <p className="max-w-prose text-xl leading-relaxed text-white/90 md:text-2xl">
               I’m a Computer Engineering student at NC State who’s been coding since middle school.
-              I love building real products end-to-end—from clean, reactive frontends to efficient,
-              reliable backends and distributed systems. In my free time I read and watch comics and
-              I like to draw; I’m big on design, craft, and shipping things people actually use.
+              I love learning about infrastructure and backend development by taking dive into low-level concepts
+              and applying them to real world projects. Ive done multiple internships, one of which at a fortune 500 company, 
+              that allowed me to work fist hand in enterprise grade applicaitons and validate that this is what I love doing.
+              If im not behind the keyboard, I love to draw while listening to music late night while workingout out and messing around wiht my friends during the day.
+              Ive recently started learning GO because I wanted get deeper into distributed systems and just understand what a program does under the hood and still tyring to find ways to become a better engineer day by day
             </p>
 
             <p className="max-w-prose text-lg leading-relaxed text-white/80 md:text-xl">
-              Comfortable with <span className="font-semibold text-white">Java, JavaScript, and C#</span> for backend;
-              <span className="font-semibold text-white"> React and TypeScript</span> for frontend; and
+               <span className="font-semibold text-white">Java, JavaScript, and C#</span> for backend;
+              <span className="font-semibold text-white"> React and TypeScript</span> for frontend;
               <span className="font-semibold text-white"> SQL</span> for databases.
               Currently exploring <span className="font-semibold text-white">Go</span> and
               <span className="font-semibold text-white"> infrastructure development</span>.

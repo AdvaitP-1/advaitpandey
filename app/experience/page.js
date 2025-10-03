@@ -33,7 +33,7 @@ export default function Experience(){
                 
                 <div className="max-w-4xl mx-auto">
                   <p className="text-lg sm:text-xl md:text-2xl font-light leading-relaxed text-white/90 mb-4 sm:mb-6">
-                    My professional journey in software engineering and technology
+                    My professional journey in software engineering through research, startups, and internships
                   </p>
                   
                   <div className="flex justify-center">

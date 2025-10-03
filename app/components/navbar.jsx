@@ -1,9 +1,7 @@
 'use client'
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight,ArrowUpRight, Linkedin, Github } from "lucide-react";
-import Link from "next/link";
-
+import { Linkedin, Github } from "lucide-react";
 
 export default function Nav(){
   const [active, setActive] = useState(false);
@@ -18,7 +16,7 @@ export default function Nav(){
 
 function LinksOverlay() {
   return (
-    <nav className="fixed right-2 top-2 z-40 h-[calc(100vh_-_16px)] w-[calc(100%_-_16px)] overflow-hidden sm:right-4 sm:top-4 sm:h-[calc(100vh_-_32px)] sm:w-[calc(100%_-_32px)]">
+    <nav className="fixed right-4 top-4 z-40 h-[calc(100vh_-_32px)] w-[calc(100%_-_32px)] overflow-hidden">
       <Logo />
       <LinksContainer />
       <FooterCTAs />
@@ -55,7 +53,7 @@ function NavLink ({ children, href, idx }) {
       }}
       exit={{ opacity: 0, y: -8 }}
       href={href}
-      className="block text-5xl font-semibold text-blue-500 transition-colors hover:text-white md:text-7xl"
+      className="block text-5xl font-semibold text-white/70 transition-colors hover:text-white md:text-7xl"
     >
       {children}.
     </motion.a>
@@ -73,7 +71,7 @@ function Logo() {
       }}
       exit={{ opacity: 0, y: -12 }}
       href="#"
-      className="grid h-20 w-20 place-content-center rounded-br-xl rounded-tl-xl bg-white transition-colors hover:bg-violet-50"
+      className="grid h-20 w-20 place-content-center rounded-br-xl rounded-tl-xl bg-white transition-colors hover:bg-white/90"
     >
       <img
         src="/logo.jpg"
@@ -91,15 +89,15 @@ function HamburgerButton({ active, setActive }) {
         initial={false}
         animate={active ? "open" : "closed"}
         variants={UNDERLAY_VARIANTS}
-        style={{ top: 8, right: 8 }}
-        className="fixed z-10 rounded-xl bg-gradient-to-br bg-black sm:top-4 sm:right-4"
+        style={{ top: 16, right: 16 }}
+        className="fixed z-10 rounded-xl bg-black"
       />
 
       <motion.button
         initial={false}
         animate={active ? "open" : "closed"}
         onClick={() => setActive((pv) => !pv)}
-        className={`group fixed right-2 top-2 z-50 h-16 w-16 bg-white/0 transition-all hover:bg-white/20 sm:right-4 sm:top-4 sm:h-20 sm:w-20 ${
+        className={`group fixed right-4 top-4 z-50 h-20 w-20 bg-white/0 transition-all hover:bg-white/10 ${
           active ? "rounded-bl-xl rounded-tr-xl" : "rounded-xl"
         }`}
       >
@@ -126,7 +124,7 @@ function HamburgerButton({ active, setActive }) {
 function FooterCTAs() {
   return (
     <>
-      <div className="absolute bottom-15 left-6 flex gap-8 md:flex-col">
+      <div className="absolute bottom-12 left-6 flex gap-4 md:flex-col">
         {SOCIAL_CTAS.map((l, idx) => {
           return (
             <motion.a
@@ -144,31 +142,30 @@ function FooterCTAs() {
               }}
               exit={{ opacity: 0, y: -8 }}
             >
-              <l.Component className="text-xl text-white transition-colors hover:text-blue-500" />
+              <l.Component className="text-2xl md:text-3xl text-white transition-colors hover:text-white/70" />
             </motion.a>
           );
         })}
       </div>
 
-
+      
     </>
   );
-}
+};
 
 const LINKS = [
   {
-    title: "Home",
+    title: "home",
     href: "/",
   },
   {
-    title: "Experience",
+    title: "experience",
     href: "experience",
   },
   {
-    title: "Projects",
+    title: "projects",
     href: "projects",
   },
-
 ];
 
 const SOCIAL_CTAS = [
@@ -178,8 +175,8 @@ const SOCIAL_CTAS = [
   },
   {
     Component: Github,
-    href: "https://github.com/AdvaitP-1"
-  }
+    href: "https://github.com/AdvaitP-1",
+  },
 ];
 
 const UNDERLAY_VARIANTS = {
