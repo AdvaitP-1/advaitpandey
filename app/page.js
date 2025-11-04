@@ -38,7 +38,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-12 px-6 py-24 md:grid-cols-[240px,1fr]">
           <div className="flex justify-center md:justify-start">
             <img
-              src="/profile.jpg"  
+              src="/profile.JPG"  
               alt="Advait Pandey profile photo"
               className="h-48 w-48 rounded-full object-cover ring-2 ring-white/20 shadow-xl md:h-60 md:w-60"
             />
