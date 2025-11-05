@@ -57,8 +57,15 @@ export default function Experience(){
             <div className="max-w-6xl mx-auto">
               <div className="relative">
                 <div className="absolute left-4 sm:left-1/2 transform sm:-translate-x-1/2 w-1 h-full bg-white/20"></div>
-                
+
                 <div className="space-y-8 sm:space-y-16">
+                  <ExperienceCard
+                    side="right"
+                    company="Red Hat"
+                    position="Software Engineer Intern"
+                    duration="May 2026 - Aug 2026"
+                    achievements={["Incoming Summer 2026 for Red Hat OpenShift Development Team"]}
+                  />
                   <ExperienceCard
                     side="left"
                     company="Spectrum"
