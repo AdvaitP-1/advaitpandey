@@ -60,13 +60,6 @@ export default function Experience(){
 
                 <div className="space-y-8 sm:space-y-16">
                   <ExperienceCard
-                    side="right"
-                    company="Red Hat"
-                    position="Software Engineer Intern"
-                    duration="May 2026 - Aug 2026"
-                    achievements={["Incoming Summer 2026 for Red Hat OpenShift Development Team"]}
-                  />
-                  <ExperienceCard
                     side="left"
                     company="Spectrum"
                     position="Software Engineer Intern"
