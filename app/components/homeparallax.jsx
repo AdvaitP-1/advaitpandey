@@ -80,7 +80,7 @@ const Copy = ({ opacity }) => {
         </h1>
         <p className="text-center text-[40px] md:text-[56px] font-semibold">
           <span className="bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
-            Software Engineer
+            Backend Software Engineer
           </span>
         </p>
       </div>

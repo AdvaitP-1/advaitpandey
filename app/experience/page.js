@@ -56,11 +56,22 @@ export default function Experience(){
           <section className="relative py-12 px-4 sm:py-20">
             <div className="max-w-6xl mx-auto">
               <div className="relative">
-                <div className="absolute left-4 sm:left-1/2 transform sm:-translate-x-1/2 w-1 h-full bg-white/20"></div>
+                <div className="absolute left-4 sm:left-1/2 transform sm:-translate-x-1/2 w-1 h-full bg-white"></div>
 
                 <div className="space-y-8 sm:space-y-16">
                   <ExperienceCard
                     side="left"
+                    company="Red Hat"
+                    position="Software Engineer Intern - Openshift"
+                    location="Raleigh, NC"
+                    duration="Incoming Summer 2026"
+                    achievements={[
+                      "Incoming Summer 2026"
+                    ]}
+                  />
+
+                  <ExperienceCard
+                    side="right"
                     company="Spectrum"
                     position="Software Engineer Intern"
                     location="Charlotte, NC"
@@ -73,7 +84,7 @@ export default function Experience(){
                   />
 
                   <ExperienceCard
-                    side="right"
+                    side="left"
                     company="InternOptima"
                     position="Software Engineer Intern"
                     location="Remote"
@@ -85,7 +96,7 @@ export default function Experience(){
                   />
 
                   <ExperienceCard
-                    side="left"
+                    side="right"
                     company="North Carolina State University"
                     position="Undergraduate Research Assistant"
                     location="Raleigh, NC"
@@ -97,7 +108,7 @@ export default function Experience(){
                   />
 
                   <ExperienceCard
-                    side="right"
+                    side="left"
                     company="Outlier"
                     position="AI Intern"
                     location="Remote"
@@ -120,7 +131,7 @@ const ExperienceCard = ({ side, company, position, location, duration, achieveme
   return (
     <div className={`relative flex ${side === 'left' ? 'justify-start' : 'justify-end'} sm:${side === 'left' ? 'justify-start' : 'justify-end'}`}>
       <div className={`w-full sm:w-5/12 ${side === 'left' ? 'sm:pr-8' : 'sm:pl-8'} ${side === 'left' ? 'ml-8 sm:ml-0' : 'mr-8 sm:mr-0'}`}>
-        <div className="bg-white/3 backdrop-blur-sm border border-white/5 rounded-2xl p-4 sm:p-6 hover:bg-white/6 transition-all duration-300">
+        <div className="bg-white/3 backdrop-blur-sm border-2 border-white rounded-2xl p-4 sm:p-6 shadow-[0_8px_16px_rgba(0,0,0,0.5)] hover:bg-white/6 hover:scale-105 hover:-translate-y-1 transition-all duration-300 ease-out">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 sm:mb-4">
             <h3 className="text-lg sm:text-xl font-bold text-white">{company}</h3>
             <span className="text-xs sm:text-sm font-mono text-white/60">{duration}</span>

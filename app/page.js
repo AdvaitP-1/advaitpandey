@@ -51,11 +51,7 @@ export default function Home() {
 
             <p className="max-w-prose text-xl leading-relaxed text-white/90 md:text-2xl">
               I’m a Computer Engineering student at NC State who’s been coding since middle school.
-              I love learning about infrastructure and backend development by taking dive into low-level concepts
-              and applying them to real world projects. Ive done multiple internships, one of which at a fortune 500 company, 
-              that allowed me to work fist hand in enterprise grade applicaitons and validate that this is what I love doing.
-              If im not behind the keyboard, I love to draw while listening to music late night while workingout out and messing around wiht my friends during the day.
-              Ive recently started learning GO because I wanted get deeper into distributed systems and just understand what a program does under the hood and still tyring to find ways to become a better engineer day by day
+              My experiences at Charter Communications and Red Hat have allowed me to work on real world projects and validate that this is what I love doing. Currently, Im tyring to learn more in distirbuted systems paired with applicaiton development. This really pushed me to learn lower level languages outside of Java and SQL and more into C++ and Go. Id love to connect so dont be afraid to reach out to me on my socials located on the navbar!
             </p>
 
             <p className="max-w-prose text-lg leading-relaxed text-white/80 md:text-xl">

@@ -88,6 +88,12 @@ export default function projects() {
                     className="bg-white"
                     href="https://github.com/AdvaitP-1/spectrum_os_management_tool"
                 />
+                <Card
+                    title="JetPack"
+                    subtitle="A lightweight container tool to turn your machine into a datacenter"
+                    className="bg-white"
+                    href="https://github.com/AdvaitP-1/JetPack"
+                />
             </div>
         </section> 
         </div>
@@ -129,14 +135,15 @@ const Card = ({ title, subtitle, className, href }) => {
               </p>
 
               {href && (
-                <a
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block sm:absolute sm:bottom-2 sm:left-2 sm:right-2 sm:translate-y-[120%] border-[2px] border-black bg-white px-4 py-2 text-center text-black transition-all duration-300 ease-in-out sm:opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100"
+                <div
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.open(href, '_blank', 'noopener,noreferrer');
+                  }}
+                  className="block sm:absolute sm:bottom-2 sm:left-2 sm:right-2 sm:translate-y-[120%] border-[2px] border-black bg-white px-4 py-2 text-center text-black transition-all duration-300 ease-in-out sm:opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100 cursor-pointer"
                 >
                   LET&apos;S GO
-                </a>
+                </div>
               )}
             </div>
 
