@@ -53,8 +53,8 @@ export default function Home() {
             </h2>
 
             <p className="max-w-prose text-xl leading-relaxed text-white/90 md:text-2xl">
-              I’m a Computer Engineering student at NC State who’s been coding since middle school.
-              My experiences at Charter Communications and Red Hat have allowed me to work on real world projects and validate that this is what I love doing. Currently, Im tyring to learn more in distirbuted systems paired with applicaiton development. This really pushed me to learn lower level languages outside of Java and SQL and more into C++ and Go. Id love to connect so dont be afraid to reach out to me on my socials located on the navbar!
+              I'm a Computer Engineering student at NC State who's been coding since middle school.
+              My experiences at Charter Communications and Red Hat have allowed me to work on real world projects and validate that this is what I love doing. Currently, I'm trying to learn more in distributed systems paired with application development. This really pushed me to learn lower level languages outside of Java and SQL and more into C++ and Go. I'd love to connect so don't be afraid to reach out to me on my socials located on the navbar!
             </p>
 
             <p className="max-w-prose text-lg leading-relaxed text-white/80 md:text-xl">
