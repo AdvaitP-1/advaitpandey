@@ -66,7 +66,7 @@ export default function Experience(){
                     location="Raleigh, NC"
                     duration="Incoming Summer 2026"
                     achievements={[
-                      "Incoming Summer 2026"
+                      "Backend-Development and Distributed Systems"
                     ]}
                   />
 
@@ -74,12 +74,12 @@ export default function Experience(){
                     side="right"
                     company="Spectrum"
                     position="Software Engineer Intern"
-                    location="Charlotte, NC"
+                    location="Charlotte, North Carolina, United States · On-site"
                     duration="May 2025 - Aug 2025"
                     achievements={[
-                      "Developed a support tool to access lower level testing environments using React.js, Springboot(Java), and SQL",
-                      "Built RESTful APIs in Java handling group membership logic, supporting 1,000+ internal users",
-                      "Deployed microservices on Azure with Docker, leveraging Datadog to monitor scalability, reliability, and fault tolerance in distributed systems"
+                      "Built an internal developer/support tool to automate access provisioning for lower-level test environments using Java and SQL Server on a custom C++ infrastructure automation, shipped to production",
+                      "Implemented and maintained REST APIs for call-center workflows used by 1,000+ internal users; improved reliability via input validation, error handling, and API contract consistency",
+                      "Built a fault-tolerant service using Raft for consensus, enabling linearizable reads/writes with automatic failover and metrics/tracing"
                     ]}
                   />
 
@@ -87,11 +87,12 @@ export default function Experience(){
                     side="left"
                     company="InternOptima"
                     position="Software Engineer Intern"
-                    location="Remote"
-                    duration="Sept 2024 - Dec 2024"
+                    location="Austin, TX"
+                    duration="Sep 2024 - Dec 2024"
                     achievements={[
                       "Built secure REST APIs for job-board playlists and user data retrieval, deployed on AWS EC2 and Lambda",
-                      "Developed responsive React frontend with Java and Swagger backend using MySQL for queries"
+                      "Developed a responsive React frontend with a Node.js + GraphQL backend, using MySQL for queries",
+                      "Used CloudFormation Outputs and Exports to share core resources (VPC IDs, subnets, SGs) across stacks while maintaining clean boundaries"
                     ]}
                   />
 
@@ -99,11 +100,12 @@ export default function Experience(){
                     side="right"
                     company="North Carolina State University"
                     position="Undergraduate Research Assistant"
-                    location="Raleigh, NC"
+                    location="Raleigh, North Carolina, United States"
                     duration="Aug 2024 - Nov 2024"
                     achievements={[
-                      "Developed hardware-accelerated algorithms on FPGAs using Verilog, boosting processing speed by 15%",
-                      "Programmed C++ interfaces for FPGA hardware for multithreaded applications, while reducing latency by 25%"
+                      "Built and optimized compiler passes to generate hardware-efficient code for datacenter workloads (SIMD/vectorization, loop tiling, cache-aware scheduling), improving end-to-end latency by 32.478% on representative benchmarks",
+                      "Extended an LLVM/MLIR-based compilation pipeline with new IR transforms (fusion, common subexpression elimination, strength reduction) to reduce memory traffic and increase throughput by 15.821%",
+                      "Implemented hardware-aware cost models (cache/NUMA, instruction throughput, memory bandwidth) to guide auto-tuning and scheduling decisions for CPU/GPU kernels"
                     ]}
                   />
 
